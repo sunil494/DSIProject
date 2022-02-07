@@ -22,7 +22,7 @@ class DBFile
 private:
 	Record *pointer;
 	Page *currentPage;
-	File *DB_FILE;
+	File *file;
 	off_t curLength;
 
 public:

@@ -14,48 +14,63 @@
 
 DBFile::DBFile()
 {
+    cout << "DBFile"
+         << "\n";
+    Page *currentPage = new Page();
+    Record *pointer = new Record();
+    File *file = new File();
 }
 
 DBFile ::~DBFile()
 {
-    delete pointer;
-    delete currentPage;
-    delete DB_FILE;
+    // delete pointer;
+    // delete currentPage;
+    // delete file;
 }
 
 int DBFile::Create(const char *f_path, fType f_type, void *startup)
 {
-    // DB_FILE->Open(0,(char*)f_path);
-    // DB_FILE->Close();
+    file->Open(0, (char *)f_path);
+    file->Close();
 }
 
 void DBFile::Load(Schema &f_schema, const char *loadpath)
 {
+    cout << "Load"
+         << "\n";
 }
 
 int DBFile::Open(const char *f_path)
 {
-    DB_FILE->Open(DB_FILE->GetLength(), (char *)f_path);
+    file->Open(file->GetLength(), (char *)f_path);
 }
 
 void DBFile::MoveFirst()
 {
-    DB_FILE->GetPage(currentPage, 0);
+    file->GetPage(currentPage, 0);
     currentPage->GetFirst(pointer);
 }
 
 int DBFile::Close()
 {
+    cout << "Close"
+         << "\n";
 }
 
 void DBFile::Add(Record &rec)
 {
+    cout << "Add"
+         << "\n";
 }
 
 int DBFile::GetNext(Record &fetchme)
 {
+    cout << "GetNext"
+         << "\n";
 }
 
 int DBFile::GetNext(Record &fetchme, CNF &cnf, Record &literal)
 {
+    cout << "GetNext"
+         << "\n";
 }

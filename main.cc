@@ -76,10 +76,9 @@ int main()
 	// 	while(readPage.GetFirst (&temp2))
 	// 		temp2.Print(&mySchema);
 	// }
-	DBFile *db = new DBFile();
+	DBFile dbfile;
 	const char *f_path = "Hello";
-	char startup = 'h';
-	fType type = heap;
-	db->Create(f_path, type, &startup);
+	cout << " DBFile will be created at " << f_path << endl;
+	dbfile.Create(f_path, heap, NULL);
 	// cout << "db.Create(&zero, type, &zero)" << "\n";
 }
