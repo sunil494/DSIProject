@@ -230,6 +230,8 @@ void File :: AddPage (Page *addMe, off_t whichPage) {
 
 void File :: Open (int fileLen, char *fName) {
 
+	cout << "fName output: " << fName << "\n";
+
 	// figure out the flags for the system open call
         int mode;
         if (fileLen == 0)
@@ -237,8 +239,11 @@ void File :: Open (int fileLen, char *fName) {
         else
                 mode = O_RDWR;
 
+		cout << "mode output: " << mode << "\n";
+
 	// actually do the open
         myFilDes = open (fName, mode, S_IRUSR | S_IWUSR);
+		cout << "myFilDes Output: " << myFilDes << "\n";
 
 #ifdef verbose
 	cout << "Opening file " << fName << " with "<< curLength << " pages.\n";
